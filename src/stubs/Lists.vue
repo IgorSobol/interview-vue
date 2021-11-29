@@ -3,74 +3,28 @@
     <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">
       <CreateListModal />
       <div :style="{ marginBottom: '30px' }" class="gutter-example">
-        <a-row :gutter="16">
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-        </a-row>
+        <template v-for="key in 3">
+          <a-row
+            :key="key"
+            :gutter="16"
+          >
+            <template v-for="key in 4">
+              <a-col
+                :key="key"
+                class="gutter-row"
+                :span="6"
+              >
+                <div class="gutter-box">
+                  <Card />
+                </div>
+              </a-col>
+            </template> 
+          </a-row>
+        </template>
+        
 
-        <a-row :gutter="16">
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-        </a-row>
 
-        <a-row :gutter="16">
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-          <a-col class="gutter-row" :span="6">
-            <div class="gutter-box">
-              <Card />
-            </div>
-          </a-col>
-        </a-row>
+        
       </div>
       <Pagination />
     </div>
